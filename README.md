@@ -2,10 +2,14 @@
 
 ## to start
 
-```bash npm start```
+```bash 
+npm start
+```
 
 ## to install Dependencies
 
-```bash npm install```
+```bash 
+npm install
+```
 
 ## link
