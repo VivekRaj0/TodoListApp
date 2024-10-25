@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "build" : "cd server && npm build && cd client && npm build"
+    }
+}
