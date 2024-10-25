@@ -1,16 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import Home from "./pages/Home";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const { currentUser } = useSelector((state) => state.user);
 
   return (
-    <>
-      To-Do
-    </>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={currentUser ? <Home /> : <SignUp />} />
 
-export default App
+        <Route path="/signin" element={currentUser ? <Home /> :<SignIn />} />
+        <Route path="/signup" element={currentUser ? <Home /> :<SignUp />} />
+      
+      </Routes>
+    </BrowserRouter>
+  );
+}

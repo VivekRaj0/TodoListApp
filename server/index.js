@@ -3,10 +3,12 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes.js";
 import cookieParser from "cookie-parser";
+import cors from 'cors'
 import path from 'path'
 dotenv.config();
 
 const app = express();
+app.use(cors());
 
 try {
   await mongoose.connect(process.env.MONGO_URL);
